@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-page="personalcenter">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+<body>
+<!--头部-->
+    <header class="header">
+        <div class="header_img"></div>
+        <div class="header_avterbox">
+            <img class="header_avter">
+            <div class="header_avter_id"></div>
+        </div>
+        <span class="header_avtername">昵称</span>
+        <div class="header_one">
+            <div class="header_one_title">我的佣金
+                <div class="header_one_id"></div>
+            </div>
+            <div class="header_one_item">
+                <div class="header_one_item_one" style="background-image: url('image/personal/p_14.png');margin-right: 2%">
+                    <div class="header_one_item_box">
+                        <!--<div class="header_one_item_img"></div>-->
+                        <div class="header_one_item_font header_time"></div>
+                    </div>
+                    <div class="header_commission header_monthcommiss">0.0</div>
+                    <!--<div class="header_line"></div>-->
+                </div>
+                <div class="header_one_item_one"  style="background-image: url('image/personal/p_15.png')">
+                    <div class="header_one_item_box">
+                        <!--<div class="header_one_item_img"></div>-->
+                        <div class="header_one_item_font">总获佣金</div>
+                    </div>
+                    <div class="header_commission header_totalcomiss">0.0</div>
+                </div>
+            </div>
+            <div class="header_one_item_two header_comiss">
+                <div class="header_one_item_two_img">
+                    <img src="image/personal/p_2.png" style="height: 6.5vw;margin-top: 3.5vw">
+                </div>
+                <div class="header_one_item_two_font">查看明细</div>
+            </div>
+            <a class="header_one_item_two" href="goldleader.html">
+                <div class="header_one_item_two_img">
+                    <img src="image/personal/p_7.png" style="margin-left: 1vw;width: 8vw;">
+                </div>
+                <div class="header_one_item_two_font">金牌团长
+                    <div class="header_one_item_two_ew">什么是金牌团长</div>
+                </div>
+            </a>
+            <a class="header_one_item_two" href="headnotice.html">
+                <div class="header_one_item_two_img">
+                    <img src="image/personal/p_8.png">
+                </div>
+                <div class="header_one_item_two_font">团长须知</div>
+            </a>
+            <div class="header_one_item_three">
+                <div class="header_one_item_two_img">
+                    <img src="image/personal/p_16.png" style="height: 7.5vw;width: 6.5vw;margin-top: 2.5vw">
+                </div>
+                <div class="header_one_item_two_font">我的地址
+                    <div class="header_one_item_three_font header_one_item_address"></div>
+                </div>
+            </div>
+            <div class="header_one_item_three header_ll">
+                <div class="header_one_item_two_img">
+                    <img src="image/personal/p_9.png">
+                </div>
+                <div class="header_one_item_two_font">入驻时间
+                    <div class="header_one_item_three_font header_one_item_time"></div>
+                </div>
+            </div>
+            <div class="content_onebecome">
+                <!--<div class="content_onebecomea">成为团长 立享佣金</div>-->
+            </div>
+        </div>
+    </header>
+<!--主体内容-->
+    <section class="content">
+        <!--<div class="content_one">-->
+            <!--<div class="content_onename">-->
+                <!--<span>我的佣金</span>-->
+            <!--</div>-->
+            <!--<div class="content_oneamoutbox">-->
+                <!--<span class="content_oneamoutspan">￥</span>-->
+                <!--<span class="content_oneamout">0</span>-->
+            <!--</div>-->
+            <!--<div class="content_onewithdraw"><span class="content_withdraw">提现</span></div>-->
+            <!--<div class="content_onebecome">-->
+                <!--<div class="content_onebecomea">成为团长 立享佣金</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="content_two">
+            <div class="content_two_titlebox">
+                <div class="content_two_title">我的订单</div>
+                <div class="content_two_order">全部订单></div>
+            </div>
+            <div class="content_two_menu">
+                <div class="menu_item">
+                    <div class="mene_item_img">
+                        <img src="image/personal/s_1.png">
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mene_item_img">
+                        <img src="image/personal/s_2.png">
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mene_item_img">
+                        <img src="image/personal/s_3.png">
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mene_item_img">
+                        <img src="image/personal/s_4.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_three">
+            <div class="content_three_item" id="writeoff">
+                <div class="content_three_item_img" style="height: 3.5vh;">
+                    <img src="image/personal/p_3.png">
+                </div>
+                <div class="content_three_item_name">核销码</div>
+            </div>
+            <div class="content_three_item" id="head">
+                <div class="content_three_item_img" style="margin-top: 0.5vw">
+                    <img src="image/personal/p_5.png">
+                </div>
+                <div class="content_three_item_name">成为团长</div>
+            </div>
+            <div class="content_three_item" id="shop">
+                <div class="content_three_item_img"  style="margin-top: 0.5vw">
+                    <img src="image/personal/p_5.png">
+                </div>
+                <div class="content_three_item_name">商家入驻</div>
+            </div>
+            <!--<div class="content_three_item" id="join">-->
+                <!--<div class="content_three_item_img">-->
+                    <!--<img src="image/personal/s_8.png">-->
+                <!--</div>-->
+                <!--<div class="content_three_item_name">加盟代理</div>-->
+            <!--</div>-->
+            <div class="content_three_item" id="contact">
+                <div class="content_three_item_img">
+                    <img src="image/personal/p_6.png">
+                </div>
+                <div class="content_three_item_name">联系我们</div>
+            </div>
+            <!--<div class="content_three_item" id="version">-->
+                <!--<div class="content_three_item_img">-->
+                    <!--<img src="image/personal/p_4.png">-->
+                <!--</div>-->
+                <!--<div class="content_three_item_name">版本说明</div>-->
+            <!--</div>-->
+        </div>
+        <div class="content_five">
+            <div class="content_version">版本号：  V 2.1.15</div>
+            <div class="content_five_item">
+                <div class="content_five_img"></div>
+                <div class="content_five_font">阿里云提供计算服务</div>
+            </div>
+        </div>
+        <!--<div class="content_four">-->
+            <!--&lt;!&ndash;<div class="content_four_item" id="about">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="content_four_item_img">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="image/personal/s_10.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="content_four_item_name">关于我们</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<div class="content_four_item" id="version">-->
+                <!--<div class="content_four_item_img">-->
+                    <!--<img src="image/personal/s_11.png">-->
+                <!--</div>-->
+                <!--<div class="content_four_item_name">版本说明</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </section>
+<!--底部导航-->
+    <section id="foot_nav">
+            <a href="index.html">
+                <div style="background-image: url('image/foot_nav/首页2.png');background-size: 95% 95%"></div>
+                <div>首页</div>
+            </a>
+            <a href="classification.html?k=1">
+                <div style="background-image: url('image/foot_nav/活动2.png')"></div>
+                <div>全部</div>
+            </a>
+            <a href="authentication.html?dataType=1">
+                <div style="background-image: url('image/foot_nav/认证2.png');background-size:75% 82%;"></div>
+                <div>入驻</div>
+            </a>
+            <!--<a class="merchant" href="javascript:void(0)">-->
+                <!--<div style="background-image: url('image/foot_nav/商家2.png');background-size:75% 75%;"></div>-->
+                <!--<div>商家</div>-->
+            <!--</a>-->
+            <a href="personalcenter.html">
+                <div style="background-image: url('image/foot_nav/我的1.png');background-size:75% 75%;"></div>
+                <div style="color: #D81E06">我的</div>
+            </a>
+        </section>
+<!--商家弹框-->
+<!--alert-->
+    <section id="alertK">
+    <div id="alert1">
+        <div class="back"></div>
+        <div class="title"></div>
+        <div class="titleT"></div>
+        <div class="tp" style="margin-bottom: 5vw">
+            <div style="background-image: url('img/entrance_alert/团长账号.png')"></div>
+            <div>
+                <input type="text" class="username" placeholder="输入账号" id="shopname">
+            </div>
+        </div>
+        <div class="tp" style="margin-bottom: 3vw">
+            <div style="background-image: url('img/entrance_alert/团长密码.png')"></div>
+            <div>
+                <input type="password" class="username" placeholder="输入密码" id="shoppassword">
+            </div>
+        </div>
+        <div class="login_two_remeber">
+            <input type="checkbox" class="login_remeber">
+            <div>记住账号</div>
+        </div>
+        <div class="login"></div>
+        <!--<div class="forget"></div>-->
+        <div class="st"></div>
+    </div>
+</section>
+<!--关于我们-->
+    <div class="aboutbox">
+        <div class="about">
+            <div class="about_header_cannel">
+                <img src="image/personal/h_4.png">
+            </div>
+            <div class="about_header">
+                <div class="about_header_img">
+                    <img src="image/personal/h_3.png">
+                </div>
+                <div class="about_header_title">关于我们</div>
+            </div>
+            <div class="about_content"></div>
+        </div>
+    </div>
+<!--联系我们-->
+    <div class="contactbox">
+        <div class="contact">
+            <div class="contact_header_cannel">
+                <img src="image/personal/h_4.png">
+            </div>
+            <div class="contact_header">
+                <div class="contact_header_img">
+                    <img src="image/personal/p_6.png">
+                </div>
+                <div class="contact_header_title">联系我们</div>
+            </div>
+            <div class="contact_content">
+                <div class="contact_content_item">
+                    <div class="contact_content_item_title">地址:</div>
+                    <div class="contact_content_item_font">常州市武进区武进科创园（天安数码城）C栋812</div>
+                </div>
+                <div class="contact_content_item">
+                    <div class="contact_content_item_title">联系方式:</div>
+                    <div class="contact_content_item_font">15261176715</div>
+                </div>
+                <div class="contact_content_item">
+                    <div class="contact_content_item_title">商务合作:</div>
+                    <div class="contact_content_item_font">18961176911</div>
+                </div>
+                <div class="contact_content_item">
+                    <div class="contact_content_item_title">邮箱:</div>
+                    <div class="contact_content_item_font">fsl@youguangchina.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--版本说明-->
+    <div class="versionbox">
+        <div class="version">
+            <div class="version_header_cannel">
+                <img src="image/personal/h_4.png">
+            </div>
+            <div class="version_header">
+                <div class="version_header_img">
+                    <img src="image/personal/p_4.png">
+                </div>
+                <div class="version_header_title">版本说明</div>
+            </div>
+            <div class="version_content">
+                版本号:  V2.1.15
+            </div>
+        </div>
+    </div>
+<!--加载动画-->
+    <div class="loading">
+        <div class="slice">
+            <div data-loader="circle"></div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    localStorage.setItem('key','personal');
+    var myDate = new Date();
+    var month=myDate.getMonth()+1;
+    var day = myDate.getDate(),m;
+    if(day >=15){
+        m = '/下 佣金';
+    }else {
+        m = '/上 佣金';
+    }
+    $('.content_onetime').text(month+'月'+m);
+    $('.header_time').text(month+'月'+m);
+</script>
+</html>

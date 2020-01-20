@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-page="orderdetails" style="background:rgba(240,240,240,1);">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XjraEGMdO6BPkUd7VOhGsZKWmLyaPlGT"></script>
+</head>
+<body style="background: rgba(240,240,240,1)">
+<!--主体内容-->
+    <section class="orderdetails">
+        <div class="orderdetailsone">
+            <div class="od_one_header">
+                <div class="od_one_img">
+                    <img class="od_img" >
+                </div>
+                <div class="od_one_name"></div>
+            </div>
+            <div class="od_one_use">
+                <div class="od_one_title">核销码</div>
+                <div class="od_one_cdk">
+                    <!--<div>159632</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="orderdetailsfour">
+            <div class="od_four_title">有效期:</div>
+            <div class="od_four_time"></div>
+        </div>
+        <div class="orderdetailstwo">
+            <div class="od_two_title">注意事项</div>
+            <div class="od_two_item">
+                <div class="od_two_itemname">使用需知：<p class="od_two_itemcontent">本券有效期为:
+                    <span><span id="od_two_time"></span></span>
+                </p></div>
+            </div>
+            <div class="od_two_item">
+                <div class="od_two_itemname">产品介绍：<span class="od_two_itemcontent" id="notice"></span></div>
+            </div>
+            <div class="od_two_item">
+                <div class="od_two_itemname">退改说明：<span class="od_two_itemcontent" id="refund"></span></div>
+            </div>
+        </div>
+        <div class="orderdetailsthree">
+            <div class="od_three_box">
+                <div class="od_three_title">订单信息</div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">姓名：<span class="od_three_itemcontent" id="od_name"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">支付金额：￥<span class="od_three_itemcontent" id="od_amount"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">支付时间：<span class="od_three_itemcontent" id="od_paytime"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">订单编号：<span class="od_three_itemcontent" id="od_orderid"></span></div>
+                </div>
+            </div>
+            <div class="od_three_box">
+                <div class="od_three_title">商家信息</div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">商家名称：<span class="od_three_itemcontent" id="od_shopname"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">营业时间：<span class="od_three_itemcontent" id="od_time"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname">活动地址：<span class="od_three_itemcontent" id="od_address"></span></div>
+                </div>
+                <div class="od_three_item">
+                    <div class="od_three_itemname od_three_tel">客服热线：
+                        <span class="od_three_itemcontent" id="od_tel"></span>
+                    </div>
+                    <a class="od_three_bh" href="" onclick="$(this).attr('href','tel:'+$('#od_tel').text())">联系商家</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--底部导航-->
+    <footer>
+        <!--nav-->
+        <section id="foot_nav">
+            <a href="index.html">
+                <div style="background-image: url('image/foot_nav/首页2.png');background-size: 95% 95%"></div>
+                <div>首页</div>
+            </a>
+            <a href="classification.html?k=1">
+                <div style="background-image: url('image/foot_nav/活动2.png')"></div>
+                <div>全部</div>
+            </a>
+            <a href="authentication.html?dataType=1">
+                <div style="background-image: url('image/foot_nav/认证2.png');background-size:75% 82%;"></div>
+                <div>入驻</div>
+            </a>
+            <!--<a class="merchant" href="javascript:void(0)">-->
+                <!--<div style="background-image: url('img/foot_nav/商家2.png');background-size:75% 75%;"></div>-->
+                <!--<div>商家</div>-->
+            <!--</a>-->
+            <a href="personalcenter.html">
+                <div style="background-image: url('image/foot_nav/我的1.png');background-size:75% 75%;"></div>
+                <div style="color: #D81E06">我的</div>
+            </a>
+        </section>
+
+    </footer>
+<!--商家弹框-->
+<!--alert-->
+    <section id="alertK">
+        <div id="alert1">
+            <div class="back"></div>
+            <div class="title"></div>
+            <div class="titleT"></div>
+            <div class="tp" style="margin-bottom: 5vw">
+                <div style="background-image: url('img/entrance_alert/团长账号.png')"></div>
+                <div>
+                    <input type="text" class="username" placeholder="输入账号" id="shopname">
+                </div>
+            </div>
+            <div class="tp" style="margin-bottom: 3vw">
+                <div style="background-image: url('img/entrance_alert/团长密码.png')"></div>
+                <div>
+                    <input type="password" class="username" placeholder="输入密码" id="shoppassword">
+                </div>
+            </div>
+            <div class="login_two_remeber">
+                <input type="checkbox" class="login_remeber">
+                <div>记住账号</div>
+            </div>
+            <div class="login"></div>
+            <!--<div class="forget"></div>-->
+            <div class="st"></div>
+        </div>
+    </section>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    localStorage.setItem('key','orderdetails');
+</script>
+</html>

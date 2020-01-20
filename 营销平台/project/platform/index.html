@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-page="index">
+<head>
+    <meta charset="UTF-8">
+    <title id="title"></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--<link rel="stylesheet/less" type="text/css" href="css/main.less" />-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="lib/less.js" type="text/javascript"></script>
+    <!--<script src="lib/rem.js" type="text/javascript"></script>-->
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XjraEGMdO6BPkUd7VOhGsZKWmLyaPlGT"></script>
+
+    <script src="lib/jquery-2.2.3.min.js"></script>
+    <!--<script src="lib/rem.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>-->
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <!--<script src="lib/html2canvas.js"></script>-->
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+<body id="bdy" style="display:none;" ontouchstart="" ontouchover="">
+    <!--Sharer-->
+    <!--<div id="sharer">-->
+        <!--<div>分享人</div>-->
+        <!--<div class="sharer_head"></div>-->
+        <!--<div class="sharer_name">微信名称</div>-->
+    <!--</div>-->
+    <!--banner-->
+    <section id="banner">
+
+    </section>
+    <!--Activity Information-->
+    <section id="activity_information">
+        <div>
+            <div>
+                <img src="img/index/o_1.png">
+            </div>
+            <div>活动截止日期 <span class="overTime"></span></div>
+        </div>
+        <div>
+            <div>
+                <img src="img/index/o_3.png" style="width: 4.3vw;height: 4.3vw;margin-top: 0.7vw">
+            </div>
+            <div>剩余产品<span class="surplus"></span>件</div>
+        </div>
+    </section>
+    <!--Activity Name-->
+    <section id="activity_name">
+
+    </section>
+    <!--Activity Price-->
+    <section id="activity_price">
+        <div>
+            <div>平台价<span class="moneyNow"></span><span>￥</span></div>
+            <div>原价&nbsp;&nbsp;<span class="moneyYear"></span>￥</div>
+        </div>
+        <!--<div class="commission">-->
+            <!--<div>佣金<span id="commission"></span>￥</div>-->
+        <!--</div>-->
+        <div class="comission">
+            <span class="commiss_yjone">佣金</span>
+            <span class="commiss_yjtwo"></span>
+        </div>
+    </section>
+    <!--POS Information-->
+    <section id="pos_information">
+        <div class="pos_shopinfor">商家信息</div>
+
+        <!--<div>-->
+            <!--<div class="pos_name"></div>-->
+            <!--<div>兑换时间：<span class="pos_time2"></span></div>-->
+            <!--<div>客服电话：<span class="pos_phone1"></span></div>-->
+            <!--<div class="pos_address">-->
+
+                <!--<div class="pos_address2">-->
+                    <!--<span>兑换地址：</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<a onclick="$(this).attr('href','tel:'+$('.pos_phone1').text())" href="">联系商家</a>-->
+        <!--</div>-->
+        <div>
+            <ul>
+                <li class="pos_name"></li>
+                <li>兑换时间：<span class="pos_time2"></span></li>
+                <li>客服电话：
+                    <span class="pos_phone1"></span>
+                    <!--<a class="bh" href="tel:$('.pos_phone1').text()">拨号</a>-->
+                </li>
+                <li class="pos_address">
+                    <div class="pos_address2">
+                        <span>活动地址：</span>
+                    </div>
+                </li>
+            </ul>
+            <a onclick="$(this).attr('href','tel:'+$('.pos_phone1').children('div').eq(0).text())" href="">联系商家</a>
+        </div>
+
+
+    </section>
+    <!--Buying-->
+    <section id="buying">
+        <div class="buying_instructions">
+            <div class="buying_box">
+                <div class="buying_insone">使用须知</div>
+                <div  id="buying_use" class="buying_isfont">
+
+                </div>
+                <div class="buying_insone">活动介绍</div>
+                <div id="buying_notice" class="buying_isfont">
+
+                </div>
+                <div class="buying_insone">退改说明</div>
+                <div id="buying_instructions" class="buying_isfont">
+
+                </div>
+            </div>
+            <div class="buying_zhuyi">请仔细阅读</div>
+        </div>
+        <div class="commodity_details">
+            <div class="comm">活动详情</div>
+            <div id="commodity_details">
+                <img src="" alt="" id="com_imgone">
+                <img src="" alt="" id="com_imgtwo">
+                <img src="" alt="" id="com_imgthree">
+                <img src="" alt="" id="com_imgfour">
+                <img src="" alt="" id="com_imgfive">
+                <img src="" alt="" id="com_imgsix">
+                <img src="" alt="" id="com_imgseven">
+                <img src="" alt="" id="com_imgeight">
+            </div>
+        </div>
+
+    </section>
+    <!--footer nav-->
+    <section id="footer">
+        <div class="footeraa">
+            <a href="javascript:hq()">
+                <div style="background-image: url('img/index/我的.png')"></div>
+                <div>核销码</div>
+                <span></span>
+            </a>
+            <div class="footer_numberbox">
+                <div>
+                    <button class="plus">+</button>
+                    <span class="footer_number">1</span>
+                    <button class="less">-</button>
+                </div>
+            </div>
+            <div class="footerbox" onclick="payFrom($(this).find('.money').text())">
+                <div>￥<span class="money"></span></div>
+                <div>立即购买</div>
+            </div>
+            <a href="javascript:share()" class="footer_atwo">
+                <div style="background-image: url('img/index/o_2.png');width: 10vw;"></div>
+                <div>分享</div>
+                <span></span>
+            </a>
+        </div>
+    </section>
+
+    <!--文字素材按钮-->
+    <div class="material">文字介绍</div>
+    <!--公众号-->
+    <section class="public">
+        <div class="public_item">
+            <div class="public_item_font">
+                <img src="img/index/i_0.png">
+                <div class="">购买成功</div>
+            </div>
+            <div class="public_item_img"></div>
+            <div class="public_item_title">关注公众号，随时查看核销券</div>
+            <div class="public_item_cannel">确定</div>
+        </div>
+    </section>
+    <!--alert-->
+    <section id="alertK">
+        <div class="backAlert" onclick="$(this).parents('#alertK').hide()"></div>
+        <div id="share">
+            <img class="ctt" id="share_img" src="" alt="">
+            <img class="sharer_head ctt" src="" alt="">
+            <img class="share ctt shareim" src="img/index/i_4.png" alt="">
+            <!--<img id="shareImg" src="" alt="">-->
+            <div class="sharemm">
+                <img id="shareImg" src="" alt="">
+            </div>
+            <!--<div class="anim" data-html2canvas-ignore>-->
+                <!--<div class="spinner"></div>-->
+            <!--</div>-->
+            <!--加载动画-->
+            <div class="anim" data-html2canvas-ignore>
+                <div class="slice">
+                    <div data-loader="circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--返回上一页-->
+    <section id="return">返回</section>
+
+    <!--加载动画-->
+    <div class="loading">
+        <div class="slice">
+            <div data-loader="circle"></div>
+        </div>
+    </div>
+<script>
+
+    //禁止遮罩层穿透
+    document.getElementById('alertK').addEventListener('touchmove', function (event) {
+        event.preventDefault();
+    });
+
+    var set=(function () {
+
+        function init() {
+            $('#bdy').css({
+                "display": "block"
+            });
+        }
+        return {
+            init:init
+        }
+    }());
+
+    $(document).ready(function () {
+        set.init();
+    });
+    //缓存重加载
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+
+    function urlSearch() {
+        var str=location.href; //取得整个地址栏
+        var num=str.split('?');
+        var arr;
+        var data={};
+        var name;
+        $.each(num,function (ind,val) {
+            if(ind>0){
+                if(val.split('&').length>1){
+                    for(var i=0;i<val.split('&').length;i++){
+                        arr=val.split('&')[i].split('=');
+                        name=arr[0];
+                        data[name]=arr[1];
+                    }
+                }else {
+                    arr=val.split('=');
+                    var name=arr[0];
+                    data[name]=arr[1];
+                }
+            }
+        });
+        return data;
+    }
+    var u = urlSearch();
+    if(u.status === '0'||u.status === 0){//平台进入详情页
+        $('.comission').show();
+    }else if(u.status === '1'||u.status === 1){//商家进入详情页
+        weixinShouquan();
+        $('.comission').show();
+        $('#return').show();
+    } else {//分享详情页
+        weixinShouquan();
+    }
+    function weixinShouquan() {
+        var appid = 'wxc4aaae117c8ba4e5';
+        var getRequest = urlSearch();
+        if (getRequest.code!==undefined&&getRequest.code!==null&&getRequest.code!==localStorage.getItem('code')) {
+            localStorage.setItem('code',getRequest.code);
+            this.code = getRequest.code;
+            //把code值传给后台；
+            var data = {code:getRequest.code,port:'1',shopId:''};
+            console.log(data);
+            $.ajax({//微信授权
+                url:'http://www.youguangchina.cn/MarketPlatform/user/search',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (data) {
+                    console.log(data);
+                    localStorage.setItem('openid',data.openid);
+                    localStorage.setItem('personal',JSON.stringify({openid:data.openid,headPic:data.headPic,nickName:data.nickName}));
+                },
+                error:function () {
+                    console.log("code获取出错");
+                }
+            });
+            var handle = function(event){
+                event.preventDefault(); //阻止元素发生默认的行为
+            };
+            document.body.addEventListener('touchmove',handle,false);//添加监听事件--页面不可滚动
+            // document.body.removeEventListener('touchmove',handle,false);//移除监听事件--页面恢复可滚动
+        }
+//执行微信授权操作；
+        else{
+            localStorage.setItem('url',window.location.href);
+            var pageUrl = window.location.href
+                .replace(/[/]/g, "%2f")
+                .replace(/[:]/g, "%3a")
+                .replace(/[#]/g, "%23")
+                .replace(/[&]/g, "%26")
+                .replace(/[=]/g, "%3d");
+            //调用微信登陆授权获取code值
+            window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid  + "" +
+                "&redirect_uri=" + pageUrl + "&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+        }
+    }
+
+
+</script>
+</body>
+<script src="js/index.js"></script>
+</html>

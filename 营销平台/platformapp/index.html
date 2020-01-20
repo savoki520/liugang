@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-page="index">
+<head>
+    <meta charset="UTF-8">
+    <title>龙城周边GO-团长中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--<link rel="stylesheet/less" type="text/css" href="css/main.less" />-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="lib/less.js" type="text/javascript"></script>
+    <script src="lib/rem.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XjraEGMdO6BPkUd7VOhGsZKWmLyaPlGT"></script>
+
+    <script src="lib/jquery-2.2.3.min.js"></script>
+    <script src="lib/jquery.event.drag-2.2.js"></script>
+    <script src="lib/jquery.event.drop-2.2.js"></script>
+    <script src="lib/jquery.roundabout.js"></script>
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+
+</head>
+<body id="bdy" style="display:none;background-color: white;">
+<!--banner-->
+<section class="ban">
+    <div class="ban_avter">
+        <img class="ban_avterimg">
+        <div class="presonl_one_img"></div>
+    </div>
+    <section id="banner">
+        <div id="bannerD">
+
+        </div>
+        <div id="bannerT">
+            <a href="javascript:void(0)" style="background-image: url('image/index/i_2.png');"></a>
+            <a href="authentication.html?dataType=1" style="background-image: url('image/index/i_4.png');"></a>
+            <a href="authentication.html?dataType=0" style="background-image: url('image/index/i_1.png');"></a>
+            <!--<a href="javascript:void(0)" style="background-image: url('image/index/i_2.png');"></a>-->
+        </div>
+    </section>
+</section>
+<!--type分类-->
+<!--<section id="type">-->
+    <!--<div>-->
+        <!--<div>-->
+            <!--<div></div>-->
+            <!--<div>分类</div>-->
+        <!--</div>-->
+        <!--<div><a href="classification.html">更多...</a></div>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<img src="image/index/i_26.png" class="s_img">-->
+        <!--<div class="scroll">-->
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=1">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('img/index/type/新品上市.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>新品上市</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=2">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('img/index/type/离我最近.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>购买最多</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=3">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('img/index/type/佣金最高.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>佣金最高</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=4">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('img/index/type/金牌团长.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>金牌团长</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=1">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('image/index/i_12.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>全部活动</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="classification.html?dataType1=2">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('image/index/i_13.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>平台推荐</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="authentication.html?dataType=0">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('image/index/i_14.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>商家入驻</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="authentication.html?dataType=1">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('image/index/i_15.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>团长入驻</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="javascript:0">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div style="background-image: url('image/index/i_16.png')"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>玩法介绍</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+            <!--<a href="authentication.html?dataType=1" style="margin-top: 3vw;">-->
+                <!--<div style="background-image: url('image/index/i_24.png');"></div>-->
+                <!--<div><span style="margin-top: 2.6vw">团长入驻</span></div>-->
+            <!--</a>-->
+            <!--<a href="authentication.html?dataType=0" style="margin-top: 2vw;width: 35vw;">-->
+                <!--<div style="background-image: url('image/index/i_25.png');width: 17.5vw;height: 17.5vw;"></div>-->
+                <!--<div><span>商家入驻</span></div>-->
+            <!--</a>-->
+            <!--<a href="javascript:0" style="margin-top: 2vw">-->
+                <!--<div style="background-image: url('image/index/i_23.png');width: 18vw;height: 18vw;margin-bottom: 0.5vw" ></div>-->
+                <!--<div><span>开启热卖</span></div>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
+<!--佣金信息-->
+<section id="parameter">
+    <div>
+        <div>
+            <div></div>
+            <div>佣金信息</div>
+        </div>
+        <!--<div><a href="authentication.html">查看规则...</a></div>-->
+        <div><a href="javascript:0"></a></div>
+    </div>
+    <div>
+        <!--<div style="background-image: url('img/index/首页团长参数图1.png')">-->
+            <!--<div class="tz"></div>-->
+            <!--<div class="pp"><span></span><span>199</span></div>-->
+        <!--</div>-->
+        <!--<div style="background-image: url('img/index/首页团长参数图2.png')">-->
+            <!--<div class="fx"></div>-->
+            <!--<div class="pp"><span></span><span>5489</span></div>-->
+        <!--</div>-->
+        <!--<div style="background-image: url('img/index/首页团长参数图3.png')">-->
+            <!--<div class="jb"></div>-->
+            <!--<div class="pp"><span>￥</span><span>38579</span></div>-->
+        <!--</div>-->
+        <div class="para">
+            <div class="para_img"></div>
+            <div class="para_box">
+                <!--<div class="para_item">-->
+                    <!--<div class="para_item_name" style="background-image: url('image/index/i_5.png')"></div>-->
+                    <!--<div class="para_item_nameimg"></div>-->
+                    <!--<div class="para_item_amountbox">-->
+                        <!--<div class="para_item_amountimg" style="background-image: url('image/index/i_8.png')"></div>-->
+                        <!--<div class="para_item_amount">2985</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="para_item">-->
+                    <!--<div class="para_item_name" style="background-image: url('image/index/i_6.png')"></div>-->
+                    <!--<div class="para_item_nameimg"></div>-->
+                    <!--<div class="para_item_amountbox">-->
+                        <!--<div class="para_item_amountimg" style="background-image: url('image/index/i_9.png')"></div>-->
+                        <!--<div class="para_item_amount">45698</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="para_item">-->
+                    <!--<div class="para_item_name" style="background-image: url('image/index/i_7.png')"></div>-->
+                    <!--<div class="para_item_nameimg"></div>-->
+                    <!--<div class="para_item_amountbox">-->
+                        <!--<div class="para_item_amountimg" style="background-image: url('image/index/i_10.png')"></div>-->
+                        <!--<div class="para_item_amount">45596.00</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="para_item" style="background-image: url('image/index/i_19.png')"></div>
+                <div class="para_item" style="background-image: url('image/index/i_20.png');"></div>
+                <div class="para_item" style="background-image: url('image/index/i_21.png')"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--提示栏-->
+<a id="ts" ></a>
+<!--最新-->
+<!--<section id="hot">-->
+    <!--<div>-->
+        <!--<div>-->
+            <!--<div></div>-->
+            <!--<div>最新</div>-->
+        <!--</div>-->
+        <!--<div><a href="classification.html">更多...</a></div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul id="ul1">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖1.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖2.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖3.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖4.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖5.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖6.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖7.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="img/index/热卖8.png" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="ban_l_btn"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="ban_r_btn"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<div>-->
+        <!--<div id="scroll" data-pos="0">-->
+            <!--&lt;!&ndash;<a class="pos0" href="#">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_img">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="img/index/s_1.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_title">阿萨德进口国了五诶呕吐阿萨德进口国了</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_box">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_newprice">现价:￥159.00</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_commission"><span class="pro_item_yjone">佣金</span><span class="pro_item_yjtwo">99￥</span></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="pos1" href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375" >&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_img">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="img/index/s_1.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_title">阿萨德进口国了五诶呕吐阿萨德进口国了</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_box">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_newprice">现价:￥159.00</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_commission"><span class="pro_item_yjone">佣金</span><span class="pro_item_yjtwo">99￥</span></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="pos2" href="javascript:void(0)" >&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_img">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="img/index/s_1.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_title">阿萨德进口国了五诶呕吐阿萨德进adfsdg 阿萨德刚爱的时光口国了</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_box">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_newprice">现价:￥159.00</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_commission"><span class="pro_item_yjone">佣金</span><span class="pro_item_yjtwo">99￥</span></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="pos3" href="https://cd-nt.lianlianlvyou.com/?v=186&i=wx3ed1ccc70f9740b4&state=1#/zhoubian/43375" >&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_img">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="img/index/s_1.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_title">阿萨德进口国了五诶呕吐阿萨德进口国了</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="hot_item_box">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_newprice">现价:￥159.00</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="hot_commission"><span class="pro_item_yjone">佣金</span><span class="pro_item_yjtwo">99￥</span></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="btn ban_l_btn"></div>-->
+        <!--<div class="btn ban_r_btn"></div>-->
+    <!--</div>-->
+<!--</section>-->
+<!--分类-->
+<section id="classification_2">
+    <a class="c_nav active" href="javascript:void(0)" data-id="0">全部</a>
+    <!--<div>-->
+        <a href="javascript:void(0)" class="c_nav" data-id="1">美食</a>
+        <a href="javascript:void(0)" class="c_nav" data-id="2">丽人</a>
+        <a href="javascript:void(0)" class="c_nav" data-id="3">娱乐</a>
+        <a href="javascript:void(0)" class="c_nav" data-id="4">生活</a>
+        <a href="javascript:void(0)" class="c_nav" data-id="5">服饰</a>
+        <!--<a href="javascript:void(0)" class="c_nav" data-id="6">更多</a>-->
+    <!--</div>-->
+</section>
+<!--热门-->
+<section id="all">
+    <div>
+        <div>
+            <div></div>
+            <div>热门</div>
+        </div>
+        <div><a href="classification.html">更多...</a></div>
+    </div>
+    <div>
+        <div class="all">
+            <a class="all_item">
+                <div class="all_one">
+                    <img src="image/test.png">
+                </div>
+                <div class="all_two">
+                    <div class="all_two_title">顺丰包邮到家！78元起抢中大果10斤产地现摘现发！正宗大凉山</div>
+                    <div class="all_two_price">
+                        <div class="all_two_oldprice">原价：￥24000</div>
+                        <div class="all_two_newprice">现价：￥1980.0</div>
+                    </div>
+                </div>
+                <div class="ma_mc_item_commission">
+                    <div class="pro_item_yjone">佣金</div>
+                    <div class="pro_item_yjtwo">400.0<span>￥</span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!--更多...-->
+<a class="more" href="classification.html?k=1">查看全部活动</a>
+<div class="more_img"></div>
+
+<!--nav-->
+<section id="foot_nav">
+    <a href="#">
+        <div style="background-image: url('img/foot_nav/首页1.png');background-size: 95% 95%;"></div>
+        <div style="color: #D81E06">首页</div>
+    </a>
+    <a href="classification.html?k=1">
+        <div style="background-image: url('img/foot_nav/活动2.png')"></div>
+        <div>全部</div>
+    </a>
+    <a href="authentication.html?dataType=1">
+        <div style="background-image: url('img/foot_nav/认证2.png');background-size:75% 82%;"></div>
+        <div>入驻</div>
+    </a>
+    <!--<a class="merchant" href="javascript:void(0)">-->
+        <!--<div style="background-image: url('img/foot_nav/商家2.png');background-size:75% 75%;"></div>-->
+        <!--<div>商家</div>-->
+    <!--</a>-->
+    <a href="personalcenter.html">
+        <div style="background-image: url('img/foot_nav/我的2.png');background-size:75% 75%;"></div>
+        <div>我的</div>
+    </a>
+</section>
+<!--首页过度动画测试-->
+<div id="app">
+    <div class="app_header"></div>
+
+    <div class="text-wrapper">
+            <div class="text part1">
+                <div>
+                    <span class="letter"><div class="character">百</div> </span>
+                    <span class="letter"><div class="character">万</div> </span>
+                    <span class="letter"><div class="character">佣</div> </span>
+                    <span class="letter"><div class="character">金</div> </span>
+                    <span class="letter"><div class="character">等</div> </span>
+                    <span class="letter"><div class="character">你</div> </span>
+                    <span class="letter"><div class="character">来</div> </span>
+                    <span class="letter"><div class="character">拿</div> </span>
+                </div>
+            </div>
+        </div>
+
+    <div class="app_footer">V 2.1.15</div>
+</div>
+<div class="prompt">
+    <div class="prompt_item">
+        <!--<div class="prompt_item_title">您还不是团长，请先入驻！</div>-->
+        <img src="image/index/i_30.jpg">
+    </div>
+</div>
+<!--alert-->
+<section id="alertK">
+    <div id="alert1">
+        <div class="back"></div>
+        <div class="title"></div>
+        <div class="titleT"></div>
+        <div class="tp" style="margin-bottom: 5vw">
+            <div style="background-image: url('img/entrance_alert/团长账号.png')"></div>
+            <div>
+                <input type="text" class="username" placeholder="输入账号" id="shopname">
+            </div>
+        </div>
+        <div class="tp" style="margin-bottom: 3vw">
+            <div style="background-image: url('img/entrance_alert/团长密码.png')"></div>
+            <div>
+                <input type="password" class="username" placeholder="输入密码" id="shoppassword">
+            </div>
+        </div>
+        <div class="login_two_remeber">
+            <input type="checkbox" class="login_remeber">
+            <div>记住账号</div>
+        </div>
+        <div class="login"></div>
+        <!--<div class="forget"></div>-->
+        <div class="st"></div>
+    </div>
+</section>
+<div id="allmap"></div>
+<script>
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+
+    function myFun(result){
+        var cityName = result.name;
+        map.setCenter(cityName);
+        $('#city').text(cityName);//定位城市放置
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+</script>
+<script src="js/index.js"></script>
+<script>
+
+var set=(function () {
+
+    function init() {
+        $('#bdy').css({
+            "display": "block"
+        });
+
+//        $('#ul1').roundabout({
+////        easing: 'easeOutInCirc',
+////        duration: 600,
+////    enableDrag: true,
+//            minZ: 1,
+//            maxZ: 5,
+//            autoplay: true,
+//            autoplayDuration: 1800
+////        autoplayPauseOnHover: true
+//        });
+
+    }
+    return {
+        init:init
+    }
+}());
+
+$(document).ready(function () {
+    set.init();
+//    $('#ul1').roundabout({
+////        duration: 600,
+////    enableDrag: true,
+//        btnPrev: ".ban_l_btn",
+//        btnNext: ".ban_r_btn",
+//        minZ: 1,
+//        maxZ: 5,
+//        minScale: 0.2,
+//        maxScale: 1.0
+////        autoplay: true,
+////        autoplayDuration: 1800
+////        autoplayPauseOnHover: true
+//    });
+
+
+
+
+
+});
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+};
+
+
+</script>
+</body>
+</html>

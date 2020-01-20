@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-page="classification">
+<head>
+    <meta charset="UTF-8">
+    <title>龙城周边GO-团长中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--<link rel="stylesheet/less" type="text/css" href="css/main.less" />-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script src="lib/less.js" type="text/javascript"></script>
+    <script src="lib/rem.js" type="text/javascript"></script>
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XjraEGMdO6BPkUd7VOhGsZKWmLyaPlGT"></script>
+</head>
+<body style="background-color: white;">
+<!--nav-->
+<section id="nav">
+    <div class="nav_one">
+        <div class="nav_ss"></div>
+        <div>
+            <input type="text" placeholder="发现" id="nav_text">
+        </div>
+    </div>
+    <div class="nav_address" data-address="">全部地区</div>
+</section>
+<!--1级分类-->
+<!--<section id="classification_1">-->
+    <!--<a data-type1="1" class="active" href="javascript:void(0)">-->
+        <!--<div class="img img1 act" style="background-image: url('img/classification/新品上市_1.png')"></div>-->
+        <!--<div class="img img2" style="background-image: url('img/classification/新品上市_2.png')"></div>-->
+        <!--<div>新品上市</div>-->
+    <!--</a>-->
+    <!--<a data-type1="2" href="javascript:void(0)">-->
+        <!--<div class="img img1" style="background-image: url('img/classification/理我最近_1.png')"></div>-->
+        <!--<div class="img img2 act" style="background-image: url('img/classification/理我最近_2.png')"></div>-->
+        <!--<div>购买最多</div>-->
+    <!--</a>-->
+    <!--<a data-type1="3" href="javascript:void(0)">-->
+        <!--<div class="img img1" style="background-image: url('img/classification/佣金最高_1.png')"></div>-->
+        <!--<div class="img img2 act" style="background-image: url('img/classification/佣金最高_2.png')"></div>-->
+        <!--<div>佣金最高</div>-->
+    <!--</a>-->
+    <!--<a data-type1="4" href="javascript:void(0)">-->
+        <!--<div class="img img1" style="background-image: url('img/classification/金牌_1.png')"></div>-->
+        <!--<div class="img img2 act" style="background-image: url('img/classification/金牌_2.png')"></div>-->
+        <!--<div>金牌团长</div>-->
+    <!--</a>-->
+<!--</section>-->
+<!--2级分类-->
+<section id="classification_2">
+    <a class="c_nav active" href="javascript:void(0)">全部</a>
+    <a href="javascript:void(0)" class="c_nav" data-id="0">美食</a>
+    <a href="javascript:void(0)" class="c_nav" data-id="1">丽人</a>
+    <a href="javascript:void(0)" class="c_nav" data-id="2">娱乐</a>
+    <a href="javascript:void(0)" class="c_nav" data-id="3">生活</a>
+    <a href="javascript:void(0)" class="c_nav" data-id="4">服饰</a>
+    <a href="javascript:void(0)" class="more">更多</a>
+</section>
+<!--更多2级分类-->
+<section class="moreclass">
+    <a href="javascript:void(0)" class="c_mnav" data-id="5">农家乐</a>
+    <a href="javascript:void(0)" class="c_mnav" data-id="6">亲子</a>
+</section>
+<!--个人信息-->
+<section class="presonl">
+    <div class="presonl_one">
+        <div class="presonl_one_img">
+            <img class="presonl_one_avter">
+        </div>
+        <div class="presonl_one_name"></div>
+    </div>
+    <div class="presonl_two">
+        <div class="presonl_two_adderss">
+            <div class="presonl_two_addressfont"></div>
+            <div class="presonl_two_addressimg"></div>
+        </div>
+        <!--<div class="presonl_sore">-->
+            <div class="presonl_two_sort" data-id="0" style="margin-left: 2vw">附近活动</div>
+            <div class="presonl_two_time presonl_two_sort_add" data-id="1">最新活动</div>
+        <!--</div>-->
+    </div>
+</section>
+<!--3级分类-->
+<section id="classification_3">
+    <a href="javascript:void(0)" class="c3_nav active">
+        <div class="img img1 act" style="background-image: url('image/classification/c_1.png')"></div>
+        <div class="img img2" style="background-image: url('image/classification/c_1.png')"></div>
+        <div>活动专场</div>
+    </a>
+    <a href="javascript:void(0)" class="c3_nav c3_navdp">
+        <div class="img img1" style="background-image: url('image/classification/c_2.png')"></div>
+        <div class="img img2 act" style="background-image: url('image/classification/c_2.png')"></div>
+        <div>爆款单品</div>
+    </a>
+</section>
+<!--商品-->
+<section id="productList">
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <div class="pro_list">
+        <!--加载动画-->
+        <!--<div class="index_anmat">-->
+            <!--<div class="sk-wave">-->
+                <!--<div class="sk-rect sk-rect1"></div>-->
+                <!--<div class="sk-rect sk-rect2"></div>-->
+                <!--<div class="sk-rect sk-rect3"></div>-->
+                <!--<div class="sk-rect sk-rect4"></div>-->
+                <!--<div class="sk-rect sk-rect5"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--后续加载动画-->
+        <div class="loader">
+            <div class="loader-inner ball-beat">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!--<div class="ma_mc_nobox">-->
+            <!--<div class="ma_mc_notwo"></div>-->
+            <!--<div class="ma_mc_nofont">敬请期待！</div>-->
+        <!--</div>-->
+        <!--<a class="pro_item">-->
+            <!--<div class="pro_item_one">-->
+                <!--<div class="pro_item_img">-->
+                    <!--<img src="img/index/s_1.png">-->
+                <!--</div>-->
+                <!--<div class="pro_item_hot">热度：<span class="pro_hot">128</span></div>-->
+                <!--&lt;!&ndash;<div class="pro_item_shopnumber"><span class="pro_shopnumber">99</span>件已售</div>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="pro_item_two">-->
+                <!--<div class="pro_item_name">常州购物中心全球好货狂欢节！100元购卷拿好货</div>-->
+                <!--<div class="pro_item_price">-->
+                    <!--<div class="pro_item_oldprice">￥<span class="pro_oldprice">328</span></div>-->
+                    <!--<div class="pro_item_box">-->
+                        <!--<div class="pro_item_newprice">￥<span class="pro_newprice">128</span></div>-->
+                        <!--<div class="pro_item_commiss">-->
+                            <!--<span class="pro_item_yjone">佣金</span>-->
+                            <!--<span class="pro_item_yjtwo">128.5￥</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;<div class="pro_item_commission">佣金<span class="pro_commission">99<span class="rmb">￥</span></span></div>&ndash;&gt;-->
+
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="pro_item_commiss"></div>&ndash;&gt;-->
+            <!--</div>-->
+        <!--</a>-->
+
+    </div>
+    <div class="pro_load" data-page="1">加载更多...</div>
+
+</section>
+
+
+<!--label-->
+<!--<section id="label">-->
+    <!--<div class="captainR">在线团长：<span>156</span>人</div>-->
+    <!--<div class="shareR">已分享：1870</div>-->
+<!--</section>-->
+<!--nav-->
+<section id="foot_nav">
+    <a href="index.html">
+        <div style="background-image: url('img/foot_nav/首页2.png');background-size: 95% 95%;"></div>
+        <div>首页</div>
+    </a>
+    <a href="#">
+        <div style="background-image: url('img/foot_nav/活动1.png')"></div>
+        <div style="color: #D81E06">全部</div>
+    </a>
+    <a href="authentication.html?dataType=1">
+        <div style="background-image: url('img/foot_nav/认证2.png');background-size:75% 82%;"></div>
+        <div>入驻</div>
+    </a>
+    <!--<a class="merchant" href="javascript:void(0)">-->
+        <!--<div style="background-image: url('img/foot_nav/商家2.png');background-size:75% 75%;"></div>-->
+        <!--<div>商家</div>-->
+    <!--</a>-->
+    <a href="personalcenter.html">
+        <div style="background-image: url('img/foot_nav/我的2.png');background-size:75% 75%;"></div>
+        <div>我的</div>
+    </a>
+</section>
+<!--alert-->
+<section id="alertK">
+    <div id="alert1">
+        <div class="back"></div>
+        <div class="title"></div>
+        <div class="titleT"></div>
+        <div class="tp" style="margin-bottom: 5vw">
+            <div style="background-image: url('img/entrance_alert/团长账号.png')"></div>
+            <div>
+                <input type="text" class="username" placeholder="输入账号" id="shopname">
+            </div>
+        </div>
+        <div class="tp" style="margin-bottom: 3vw">
+            <div style="background-image: url('img/entrance_alert/团长密码.png')"></div>
+            <div>
+                <input type="password" class="username" placeholder="输入密码" id="shoppassword">
+            </div>
+        </div>
+        <div class="login_two_remeber">
+            <input type="checkbox" class="login_remeber">
+            <div>记住账号</div>
+        </div>
+        <div class="login"></div>
+        <!--<div class="forget"></div>-->
+        <div class="st"></div>
+    </div>
+    <div class="footer_img"></div>
+</section>
+
+<!--区域选择-->
+<section class="region">
+    <div class="region_box">
+        <div class="region_title">选择区域</div>
+        <div class="region_content">
+            <div class="region_item">
+                <div class="region_item_font">天宁区</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">新北区</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">钟楼区</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">武进区</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">金坛市</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">溧阳市</div>
+            </div>
+            <div class="region_item">
+                <div class="region_item_font">全部地区</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="allmap"></div>
+<script>
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+
+    function myFun(result){
+        var cityName = result.name;
+        map.setCenter(cityName);
+        $('#city').text(cityName);//定位城市放置
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+</script>
+<script src="lib/jquery-2.2.3.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

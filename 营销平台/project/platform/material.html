@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-page="material">
+<head>
+    <meta charset="UTF-8">
+    <title id="title"></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--<link rel="stylesheet/less" type="text/css" href="css/main.less" />-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="lib/less.js" type="text/javascript"></script>
+    <script src="lib/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="https://cdn.staticfile.org/clipboard.js/1.5.15/clipboard.min.js"></script>
+</head>
+<body  ontouchstart="" ontouchover="">
+    <!--头部-->
+    <header class="header">文字介绍</header>
+    <!--主体内容-->
+    <section class="content text"></section>
+    <div class="fuzhi" data-clipboard-text="">点击复制</div>
+    <div class="tk">复制成功</div>
+</body>
+<script src="js/index.js"></script>
+<script>
+    $('.fuzhi').attr('data-clipboard-text',$('.content').children('p').text());
+    //初始化复制到剪切板;
+    var clipboard = new Clipboard('.fuzhi').on('success', function(e) {
+        var e = e || window.event;
+        console.log(e);
+        setTimeout('cartoon()');
+
+    }).on('error', function(e) {
+        console.log(e);
+    });
+    function cartoon() {
+        $('.tk').show().animate({
+            opacity:'1',
+            top:'18vh'
+        },600,function () {
+            $('.tk').hide().css({'opacity':'0','top':'20vh'});
+        })
+    }
+</script>
+</html>

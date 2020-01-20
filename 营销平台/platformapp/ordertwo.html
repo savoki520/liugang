@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-page="ordertwo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XjraEGMdO6BPkUd7VOhGsZKWmLyaPlGT"></script>
+</head>
+<body>
+<!--头部-->
+<header class="order_header">
+    <ul class="order_header_ul">
+        <li class="order_header_li"><span class="order_header_lis" data-id="0">全部</span></li>
+        <li class="order_header_li"><span class="order_header_lis" data-id="1">待支付</span></li>
+        <li class="order_header_li"><span class="order_header_lis" data-id="2">待使用</span></li>
+        <li class="order_header_li"><span class="order_header_lis" data-id="3">待收货</span></li>
+        <li class="order_header_li"><span class="order_header_lis" data-id="4">已完成</span></li>
+    </ul>
+</header>
+<!--主体内容-->
+<section class="order" style="padding-bottom: 2vw">
+    <div class="order_none">
+        <img src="image/order/o_0.png">
+        <span>亲,暂时没有内容哟！</span>
+    </div>
+    <div class="order_content">
+        <!--加载动画-->
+        <!--<div class="index_anmat">-->
+            <!--<div class="sk-wave">-->
+                <!--<div class="sk-rect sk-rect1"></div>-->
+                <!--<div class="sk-rect sk-rect2"></div>-->
+                <!--<div class="sk-rect sk-rect3"></div>-->
+                <!--<div class="sk-rect sk-rect4"></div>-->
+                <!--<div class="sk-rect sk-rect5"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="slice">
+            <div data-loader="circle"></div>
+        </div>
+        <!--<div class="order_no"></div>-->
+        <!--<div class="order_item">-->
+        <!--<div class="order_item_img">-->
+        <!--<img src="image/order/o_1.png">-->
+        <!--</div>-->
+        <!--<div class="order_item_one">-->
+        <!--<div class="order_item_title">常州购物中心全球好货狂欢节！</div>-->
+        <!--<div class="order_item_amoutbox">-->
+        <!--<div class="order_item_newamout">现价：￥50.00</div>-->
+        <!--<div class="order_item_oldamout">原价：￥99.00</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order_item_two">-->
+        <!--<div class="order_item_two_title">核销码</div>-->
+        <!--<div class="order_item_two_c">56456145</div>-->
+        <!--<div class="order_item_three">-->
+        <!--<div class="order_itemtwo_time">2019-11-30</div>-->
+        <!--<div class="order_itemtwo_font">有效期</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order_item_two_timebox">剩余支付时间：<span class="order_item_two_time">15分0秒</span></div>-->
+        <!--<div  class="order_item_pay">支付</div>-->
+        <!--<div class="order_item_cannel">取消</div>-->
+        <!--</div>-->
+    </div>
+    <div class="order_more" data-page="1" style="padding-bottom: 2vw">加载更多...</div>
+</section>
+
+<!--商家弹框-->
+<!--alert-->
+<section id="alertK">
+    <div id="alert1">
+        <div class="back"></div>
+        <div class="title"></div>
+        <div class="titleT"></div>
+        <div class="tp" style="margin-bottom: 5vw">
+            <div style="background-image: url('img/entrance_alert/团长账号.png')"></div>
+            <div>
+                <input type="text" class="username" placeholder="输入账号" id="shopname">
+            </div>
+        </div>
+        <div class="tp" style="margin-bottom: 3vw">
+            <div style="background-image: url('img/entrance_alert/团长密码.png')"></div>
+            <div>
+                <input type="password" class="username" placeholder="输入密码" id="shoppassword">
+            </div>
+        </div>
+        <div class="login_two_remeber">
+            <input type="checkbox" class="login_remeber">
+            <div>记住账号</div>
+        </div>
+        <div class="login"></div>
+        <div class="forget"></div>
+        <div class="st"></div>
+    </div>
+</section>
+<!--公众号-->
+<section class="public">
+    <div class="public_item">
+        <div class="public_item_title">关注公众号，随时查看最新信息</div>
+        <div class="public_item_img"></div>
+        <div class="public_item_cannel">确定</div>
+    </div>
+</section>
+<!--取消订单弹框-->
+<div class="wr">
+    <div class="wr_box">
+        <div class="wr_title">确定取消?</div>
+        <div class="wr_do">
+            <div class="wr_ok">确定</div>
+            <div class="wr_cannel">取消</div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    localStorage.setItem('key','order');
+    var urlsearch = urlSearch();
+    if(urlsearch.wx){
+        weixinShouquan();
+    }
+    function weixinShouquan() {
+        var appid = 'wxc4aaae117c8ba4e5';
+        var getRequest = urlSearch();
+        if (getRequest.code!==undefined&&getRequest.code!==null&&getRequest.code!==localStorage.getItem('code')) {
+            localStorage.setItem('code',getRequest.code);
+            this.code = getRequest.code;
+            //把code值传给后台；
+            var data = {code:getRequest.code,port:'0',shopId:''};
+            console.log(data);
+            $.ajax({//微信授权
+                url:$href + 'MarketPlatform/user/search',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (data) {
+                    console.log(data);
+                    sessionStorage.setItem('denglu','1');
+                    localStorage.setItem('openid',data.openid);
+                    localStorage.setItem('identity',data.identity);
+                    localStorage.setItem('personal',JSON.stringify({openid:data.openid,headPic:data.headPic,nickName:data.nickName}));
+                },
+                error:function () {
+                    console.log("code获取出错");
+                }
+            });
+        }
+        //执行微信授权操作；
+        else{
+            localStorage.setItem('url',window.location.href);
+            var pageUrl = window.location.href
+                .replace(/[/]/g, "%2f")
+                .replace(/[:]/g, "%3a")
+                .replace(/[#]/g, "%23")
+                .replace(/[&]/g, "%26")
+                .replace(/[=]/g, "%3d");
+            //调用微信登陆授权获取code值
+            window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid  + "" +
+                "&redirect_uri=" + pageUrl + "&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+        }
+    }
+    function urlSearch() {
+        var str=location.href; //取得整个地址栏
+        var num=str.split('?');
+        var arr;
+        var data={};
+        var name;
+        $.each(num,function (ind,val) {
+            if(ind>0){
+                if(val.split('&').length>1){
+                    for(var i=0;i<val.split('&').length;i++){
+                        arr=val.split('&')[i].split('=');
+                        name=arr[0];
+                        data[name]=arr[1];
+                    }
+                }else {
+                    arr=val.split('=');
+                    var name=arr[0];
+                    data[name]=arr[1];
+                }
+            }
+        });
+        return data;
+    }
+</script>
+</html>
